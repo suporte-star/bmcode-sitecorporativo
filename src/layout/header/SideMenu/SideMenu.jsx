@@ -3,29 +3,43 @@ import styles from  './SideMenu.module.css'
 
 import { IoClose } from "react-icons/io5"
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+
 export default function SideMenu({isOpen, onClose}) {
+    const pathname = usePathname()
+
     const menuItems = [
         { label: 'Início', href: '/' },
         { label: 'Sobre', href: '#about' },
         { label: 'Serviços', href: '#services' },
         { label: 'Números', href: '#numbers' },
         { label: 'Contato', href: '/contact' },
-        { label: 'Suporte', href: '#Suporte' },
+        { label: 'Suporte', href: '#suporte' },
     ]
     const handleLinkClick = (href) => {
         onClose()
         setTimeout(() => {
-        if (href === '/') {
-            window.location.href = '/'
-        } else if (href === '/contact') {
-            window.location.href = '/contact'
-        } else if (href.startsWith('#')) {
-            const element = document.querySelector(href)
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' })
+            
+            if (href === '/' || href === '/contact') {
+                window.location.href = href
+            } 
+            
+            else if (href.startsWith('#')) {
+                
+                if (pathname !== '/') {
+                    window.location.href = `/${href}`
+                } else {
+                 
+                    const element = document.querySelector(href)
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                    } else {
+                 
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                }
             }
-        }
-    }, 300)
+        }, 300)
     }
     return (
         <AnimatePresence>
@@ -49,43 +63,43 @@ export default function SideMenu({isOpen, onClose}) {
                     >
 
                         <div className={styles.menuHeader}>
-                        <h2 className={styles.menuTitle}>Menu</h2>
-                        <button 
-                            className={styles.closeButton}
-                            onClick={onClose}
-                            aria-label="Fechar menu"
-                        >
-                            <IoClose />
-                        </button>
+                            <h2 className={styles.menuTitle}>Menu</h2>
+                            <button 
+                                className={styles.closeButton}
+                                onClick={onClose}
+                                aria-label="Fechar menu"
+                            >
+                                <IoClose />
+                            </button>
                         </div>
                         
                         <nav className={styles.menuNav}>
-                        <ul className={styles.menuList}>
-                            {menuItems.map((item, index) => (
-                            <motion.li
-                                key={item.href}
-                                className={styles.menuItem}
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                <a
-                                href={item.href}
-                                className={styles.menuLink}
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    handleLinkClick(item.href)
-                                }}
+                            <ul className={styles.menuList}>
+                                {menuItems.map((item, index) => (
+                                <motion.li
+                                    key={item.href}
+                                    className={styles.menuItem}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.1 }}
                                 >
-                                {item.label}
-                                </a>
-                            </motion.li>
-                            ))}
-                        </ul>
+                                    <a
+                                        href={item.href}
+                                        className={styles.menuLink}
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            handleLinkClick(item.href)
+                                        }}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </motion.li>
+                                ))}
+                            </ul>
                         </nav>
                     </motion.aside>
                 </>
             )}
         </AnimatePresence>
-  )
+    )
 }
