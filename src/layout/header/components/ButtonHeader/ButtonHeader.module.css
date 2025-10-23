@@ -1,0 +1,26 @@
+.ContentBtn {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.btnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--black-color);
+  color: var(--secondary-color);
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.7s;
+}
+
+.btnHeader:hover {
+  transform: translateY(1);
+  background-color: var(--detail-gray);
+}

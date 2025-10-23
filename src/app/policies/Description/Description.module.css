@@ -1,0 +1,119 @@
+.contentDescription {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+}
+
+.paragfDescription {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.titleDescrition {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  color: var(--black-color);
+  font-weight: 700;
+}
+
+.Description {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+
+.titlePolicie {
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+
+.titlePolicie::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.boxDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.boxDescription p {
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(44, 59, 116, 0.08);
+  border-left: 4px solid var(--primary-color);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #444;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boxDescription p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(44, 59, 116, 0.12);
+}
+
+/* Responsividade para celular */
+@media (max-width: 480px) {
+  .contentDescription {
+    padding: 1.5rem 1rem;
+  }
+  
+  .titleDescrition {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .titlePolicie {
+    font-size: 1.3rem;
+  }
+  
+  .boxDescription p {
+    padding: 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .boxDescription {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contentDescription {
+    padding: 1rem 0.75rem;
+  }
+  
+  .titleDescrition {
+    font-size: 1.3rem;
+  }
+  
+  .titlePolicie {
+    font-size: 1.2rem;
+  }
+  
+  .boxDescription p {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,26 @@
+.contentNavgation {
+  width: 680px;
+}
+
+.listNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+.item{
+  padding:8px 10px;
+  transition: all .4s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  &:hover{
+      background-color: #f1f1f1;
+      transform: translateY(-2px);
+    }
+}
+.link {
+  text-decoration: none;
+  color: var(--black-color);
+  border-radius: 10px;
+}

@@ -1,0 +1,12 @@
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 80px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.250);
+}
+@media (max-width:600px){
+    .title{
+        font-size: 36px;
+    }
+}

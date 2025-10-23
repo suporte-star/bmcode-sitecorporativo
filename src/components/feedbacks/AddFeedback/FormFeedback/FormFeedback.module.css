@@ -1,0 +1,134 @@
+.formContainer{
+    &>h2{
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 8px;
+
+    & >label{
+        font-weight: 600;
+        color: #555;
+        font-size: 14px;
+    }
+}
+.formGroup input,
+.formGroup textarea {
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    resize: none;
+    &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+        &:disabled {
+        background-color: #f8f9fa;
+        cursor: not-allowed;
+    }
+}
+
+.charCount {
+    font-size: 12px;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    color: #666;
+    font-weight: 500;
+}
+.charCountMax {
+    color: #f44336;
+    font-weight: 600;
+}
+.ratingLabel{
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+.ratingContainer {
+    display: flex;
+    align-items:center;
+    gap: 15px;
+    padding: 10px 0;
+}
+.formActions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.cancelButton {
+    padding: 12px 24px;
+    border: 2px solid #e1e5e9;
+    background: white;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+        background: #f8f9fa;
+        border-color: #ccc;
+    }
+}
+
+.submitButton {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px #1976d24d;
+}
+
+.submitButton:disabled,
+.cancelButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+:global(.MuiRating-root) {
+    color: #1976d2;
+}
+
+:global(.MuiRating-iconEmpty) {
+    color: #e0e0e0;
+}
+
+:global(.MuiRating-iconFilled) {
+    color: #1976d2;
+}
+
+:global(.MuiRating-iconHover) {
+    color: #1565c0;
+}
+
+@media (max-width:380px){
+    .formActions{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,14 @@
+.titleHeader {
+  width: 200px;
+  font-family: 18px;
+  color: var(--black-color);
+}
+
+.title {
+  font-weight: 700;
+}
+
+.colorAlternative {
+  color: var(--detail-gray);
+  font-weight: 700;
+}

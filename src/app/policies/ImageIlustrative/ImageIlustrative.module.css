@@ -1,0 +1,93 @@
+.contentImage {
+  width: 100%;
+  min-height: auto;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.dimensionImage {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1480px;
+  padding-top: 30px;
+  position: relative;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(44, 59, 116, 0.15);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.bannerImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(44, 59, 116, 0.2);
+}
+
+/* Efeito decorativo opcional */
+.contentImage::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: var(--primary-color);
+  opacity: 0.05;
+  border-radius: 50%;
+}
+
+.contentImage::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 150px;
+  height: 150px;
+  background: var(--primary-color);
+  opacity: 0.03;
+  border-radius: 50%;
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+  .contentImage {
+    padding: 2rem 1rem;
+  }
+  
+  .bannerImage {
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(44, 59, 116, 0.12);
+  }
+  
+  .contentImage::before,
+  .contentImage::after {
+    display: none; /* Remove efeitos decorativos em mobile se preferir */
+  }
+}
+
+@media (max-width: 480px) {
+  .contentImage {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .bannerImage {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(44, 59, 116, 0.1);
+  }
+  
+  .bannerImage:hover {
+    transform: none; /* Remove hover em mobile */
+  }
+}
+
+@media (max-width: 360px) {
+  .contentImage {
+    padding: 1rem 0.5rem;
+  }
+}

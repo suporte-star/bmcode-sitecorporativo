@@ -1,0 +1,13 @@
+.contentImages {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+}
+
+.dimensionImage {
+  width: 100%;
+
+  .bannerImage {
+    width: 100%;
+  }
+}

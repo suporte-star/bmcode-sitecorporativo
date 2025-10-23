@@ -1,0 +1,175 @@
+.animatedSection {
+  width: 100%;
+}
+.ContentAbout {
+  width: 100%;
+  min-height: auto;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.ContentAbout .boxContentAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 3rem;
+  padding: 80px 20px;
+  width: 100%;
+  max-width: 1300px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+}
+
+.ContentAbout .titleParagraf {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding: 0 20px;
+}
+
+.ContentAbout .titleAbout {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.contentAbout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.contentDescrition {
+  min-width: auto;
+  width: 100%;
+  max-width: 550px;
+}
+
+.CardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.badge {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  width: 90%;
+  max-width: 300px;
+  height: 80px;
+  transform: translateX(-50%);
+  background-color: #24346D;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.badge .Number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.badge .Text {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.Card {
+  background-color: #f3f3f3;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  min-height: 450px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.Card .card p {
+  font-weight: 500;
+  color: #000;
+}
+
+@media (max-width: 1200px) {
+  .ContentAbout .boxContentAbout {
+    max-width: 95%;
+    padding: 60px 15px;
+  }
+
+  .contentAbout {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 900px) {
+  .contentAbout {
+    flex-direction: column; /* faz a imagem ir pra cima */
+    gap: 3rem;
+  }
+
+  .contentDescrition {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .CardContainer {
+    max-width: 100%;
+  }
+
+  .Card {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ContentAbout {
+    padding: 20px 15px;
+  }
+
+  .ContentAbout .boxContentAbout {
+    padding: 40px 15px;
+    gap: 3rem;
+  }
+
+  .ContentAbout .titleParagraf {
+    margin-top: 30px;
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    height: 70px;
+  }
+
+  .badge .Number {
+    font-size: 2rem;
+  }
+
+  .badge .Text {
+    font-size: 0.8rem;
+  }
+
+  .Card {
+    min-height: 350px;
+    padding: 15px;
+  }
+}
