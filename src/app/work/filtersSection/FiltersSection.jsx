@@ -11,12 +11,12 @@ import {
 
 export default function FiltersSection({onFiltersChange}){
     const [filters, setFilters] = useState({
-        typeVacancy: '',
+        typeVacancy: 'all',
         orderBy: 'data'
     })
 
     const typesVacancies = [
-        { value: '', label: 'Todos os tipos' },
+        { value: 'all', label: 'Todos' },
         { value: 'desenvolvimento', label: 'Desenvolvimento' },
         { value: 'design', label: 'Design' },
         { value: 'marketing', label: 'Marketing' },
@@ -43,7 +43,7 @@ export default function FiltersSection({onFiltersChange}){
 
     const handleClearFilters = () => {
         const clearedFilters = {
-            typeVacancy: '',
+            typeVacancy: 'all',
             orderBy: 'data'
         }
         setFilters(clearedFilters)
@@ -59,22 +59,10 @@ export default function FiltersSection({onFiltersChange}){
                 <div className={styles.filterGroup}>
                     <label htmlFor="typeVacancy" className={styles.filterLabel}>Tipo de Vaga</label>
                     <FormControl fullWidth>
-                        <InputLabel 
-                            id="type-vacancy-label"
-                            sx={{
-                                color: '#555',
-                                '&.Mui-focused': {
-                                    color: 'var(--primary-color)'
-                                }
-                            }}
-                        >
-                            Tipo de Vaga
-                        </InputLabel>
                         <Select
                             labelId="type-vacancy-label"
                             id="typeVacancy"
                             value={filters.typeVacancy}
-                            label="Tipo de Vaga"
                             onChange={(e) => handleFilterChange('typeVacancy', e.target.value)}
                             sx={{
                                 '& .MuiOutlinedInput-notchedOutline': {
@@ -134,7 +122,7 @@ export default function FiltersSection({onFiltersChange}){
                         borderColor: 'var(--primary-color)',
                         '&:hover': {
                             borderColor: 'var(--primary-color)',
-                            backgroundColor: '#667eea0a'
+                            backgroundColor: '#8191d81e'
                         }
                     }}
                 >

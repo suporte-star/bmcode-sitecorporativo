@@ -12,7 +12,7 @@ export default function JobsClient({ initialJobs }) {
     const filteredAndSortedJobs = useMemo(() => {
         let filteredJobs = [...initialJobs]
 
-        if (filters.typeVacancy) {
+        if (filters.typeVacancy && filters.typeVacancy !== 'all') {
             filteredJobs = filteredJobs.filter(job => 
                 job.tipoVaga === filters.typeVacancy
             )

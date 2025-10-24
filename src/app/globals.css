@@ -18,6 +18,8 @@
   --black-color: #030304;
   --detail-gray: #858384;
   --footer-gray: #3E403F;
+  --blue-color:#1976d2;
+  --blue-color2:#1565c0;
 }
 html, body{
   height: 100vh;

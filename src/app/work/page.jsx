@@ -41,7 +41,7 @@ async function getJobs() {
       id: 4,
       cargo: 'Especialista em Marketing',
       publicadaEm: '2024-01-08',
-      nivel: 'Pleno',
+      nivel: 'Estágio',
       tipoContrato: 'PJ',
       localizacao: 'Remoto',
       emailDestino: 'suporte@bmcode.com.br',

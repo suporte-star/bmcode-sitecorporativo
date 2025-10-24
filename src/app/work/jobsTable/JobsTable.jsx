@@ -16,7 +16,7 @@ export default function JobsTable({jobs}) {
     }
 
     return (
-        <div className={styles.tableCotainer}>
+        <div className={styles.tableContainer}>
             <div className={styles.tableHeader}>
                 <h2 className={styles.tableTitle}>Vagas Disponíveis</h2>
                 <span className={styles.jobsCount}>{jobs.length} vaga(s) encontrada(s)</span>
@@ -35,24 +35,24 @@ export default function JobsTable({jobs}) {
                 <tbody>
                     {jobs.map((job) => (
                         <tr key={job.id} className={styles.tr}>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Cargo">
                                 <span className={styles.jobTitle}>{job.cargo}</span>
                             </td>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Publicada em">
                                 {formatDate(job.publicadaEm)}
                             </td>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Nível">
                                 <span className={`${styles.badge} ${styles[job.nivel.toLowerCase()]}`}>
                                     {job.nivel}
                                 </span>
                             </td>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Tipo de Contrato">
                                 {job.tipoContrato}
                             </td>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Localização">
                                 {job.localizacao}
                             </td>
-                            <td className={styles.td}>
+                            <td className={styles.td} data-label="Ação">
                                 <ApplyBtn job={job} />
                             </td>
                         </tr>

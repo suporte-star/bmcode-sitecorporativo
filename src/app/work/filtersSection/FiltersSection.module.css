@@ -20,20 +20,13 @@
 .filterGroup {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-.activeFilters {
+.filterActions{
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.filterTag {
-    background: #667eea;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
+    gap: 30px;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
