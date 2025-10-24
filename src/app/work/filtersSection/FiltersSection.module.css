@@ -1,0 +1,44 @@
+.filtersContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filtersTitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.filtersGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.activeFilters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filterTag {
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .filtersGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

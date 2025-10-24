@@ -28,10 +28,15 @@ export default function Aboutus() {
                 </div>
               </div>
               <div className={styles.Card}>
-                <p>Image Ilustrativa</p>
+                <div className={styles.dimensionImage}>
+                  <img
+                    src="./image/Data-01.png"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
-          </div> 
+          </div>
         </AnimatedSection>
 
         <AnimatedSection className={styles.animatedSection}>
@@ -43,7 +48,12 @@ export default function Aboutus() {
                 </div>
               </div>
               <div className={styles.Card}>
-                <p>Image Ilustrativa</p>
+                <div className={styles.dimensionImage}>
+                  <img
+                    src="./image/Data.png"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
             <div className={styles.contentDescrition}>
@@ -72,7 +82,12 @@ export default function Aboutus() {
                 </div>
               </div>
               <div className={styles.Card}>
-                <p>Image Ilustrativa</p>
+                <div className={styles.dimensionImage}>
+                  <img
+                    src="./image/Data-02.png"
+                    alt=""
+                  />  
+                </div>
               </div>
             </div>
           </div>

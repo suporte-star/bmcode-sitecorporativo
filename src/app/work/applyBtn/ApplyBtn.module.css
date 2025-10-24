@@ -1,0 +1,19 @@
+.ApplyBtn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ApplyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.ApplyBtn:active {
+  transform: translateY(0);
+}

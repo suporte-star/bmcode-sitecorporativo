@@ -1,0 +1,97 @@
+.tableContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.tableHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.tableTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.jobsCount {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.jobsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e1e5e9;
+}
+
+.tr {
+  border-bottom: 1px solid #e1e5e9;
+  transition: background-color 0.3s ease;
+}
+
+.tr:hover {
+  background-color: #f8f9fa;
+}
+
+.td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.jobTitle {
+  font-weight: 600;
+  color: #333;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge.júnior {
+  background: #daeaff;
+  color: #1e40af;
+}
+
+.badge.pleno {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.sênior {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.noJobs {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  .jobsTable {
+    min-width: 600px;
+  }
+}

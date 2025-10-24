@@ -29,7 +29,7 @@ export default function Footer() {
     { href: '#initial', label: 'Inicio' },
     { href: '/contact', label: 'Contato' },
     { href: '#', label: 'Sobre' },
-    { href: '#', label: 'Trabalhe Conosco' },
+    { href: '/work', label: 'Trabalhe Conosco' },
     { href: '/policies', label: 'Política de Privacidade' },
   ];
 

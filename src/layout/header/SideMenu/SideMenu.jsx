@@ -14,7 +14,7 @@ export default function SideMenu({isOpen, onClose}) {
         { label: 'Serviços', href: '#services' },
         { label: 'Números', href: '#numbers' },
         { label: 'Contato', href: '/contact' },
-        { label: 'Suporte', href: '#suporte' },
+        { label: 'Mensagem', href: 'https://wa.me/5585920048167'},
     ]
     const handleLinkClick = (href) => {
         onClose()

@@ -5,9 +5,9 @@ import ImageIlustrative from './ImageIlustrative/ImageIlustrative'
 
 export default function Policies() {
   return (
-    <section className={styles.contentPolicie}>
+    <main className={styles.contentPolicie}>
       <ImageIlustrative />
       <Description />
-    </section>
+    </main>
   )
 }

@@ -123,12 +123,16 @@
 
 @media (max-width: 900px) {
   .contentAbout {
-    flex-direction: column; /* faz a imagem ir pra cima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap: 3rem;
   }
 
   .contentDescrition {
     max-width: 100%;
+    flex-direction: column;
     text-align: center;
   }
 
