@@ -84,6 +84,8 @@
 
 .menuLink {
   display: block;
+  border: none;
+  background: none;
   padding: 16px 24px;
   color: var(--black-color);
   text-decoration: none;

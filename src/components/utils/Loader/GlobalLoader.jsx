@@ -26,6 +26,19 @@ export default function GlobalLoader({ children }) {
     }, [pathname])
 
     useEffect(() => {
+        if (pathname === "/") {
+            const targetId = sessionStorage.getItem("scrollTarget");
+            if (targetId) {
+            sessionStorage.removeItem("scrollTarget");
+            setTimeout(() => {
+                const el = document.getElementById(targetId);
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
+            }
+        }
+    }, [pathname]);
+
+    useEffect(() => {
         const handleClick = (e) => {
             const link = e.target.closest('a[href]')
             if (link && link.origin === window.location.origin) {

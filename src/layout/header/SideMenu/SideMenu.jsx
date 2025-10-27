@@ -3,43 +3,40 @@ import styles from  './SideMenu.module.css'
 
 import { IoClose } from "react-icons/io5"
 import { motion, AnimatePresence } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from "next/navigation";
 
 export default function SideMenu({isOpen, onClose}) {
-    const pathname = usePathname()
+    const router = useRouter();
+    const pathname = usePathname();
 
     const menuItems = [
         { label: 'Início', href: '/' },
-        { label: 'Sobre', href: '#about' },
-        { label: 'Serviços', href: '#services' },
-        { label: 'Números', href: '#numbers' },
+        { label: 'Sobre', targetId: 'about' },
+        { label: 'Serviços', targetId: 'services' },
+        { label: 'Números', targetId: 'numbers' },
         { label: 'Contato', href: '/contact' },
         { label: 'Mensagem', href: 'https://wa.me/5585920048167'},
     ]
     const handleLinkClick = (href) => {
         onClose()
+
         setTimeout(() => {
             
             if (href === '/' || href === '/contact') {
                 window.location.href = href
             } 
             
-            else if (href.startsWith('#')) {
+            else if (item.targetId) {
+                if (pathname === '/') {
+                    const el = document.getElementById(item.targetId)
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 
-                if (pathname !== '/') {
-                    window.location.href = `/${href}`
                 } else {
-                 
-                    const element = document.querySelector(href)
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' })
-                    } else {
-                 
-                        window.scrollTo({ top: 0, behavior: 'smooth' })
-                    }
+                    sessionStorage.setItem('scrollTarget', item.targetId)
+                    router.push('/')
                 }
             }
-        }, 300)
+            }, 300)
     }
     return (
         <AnimatePresence>
@@ -83,8 +80,7 @@ export default function SideMenu({isOpen, onClose}) {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: index * 0.1 }}
                                 >
-                                    <a
-                                        href={item.href}
+                                    <button
                                         className={styles.menuLink}
                                         onClick={(e) => {
                                             e.preventDefault()
@@ -92,7 +88,7 @@ export default function SideMenu({isOpen, onClose}) {
                                         }}
                                     >
                                         {item.label}
-                                    </a>
+                                    </button>
                                 </motion.li>
                                 ))}
                             </ul>

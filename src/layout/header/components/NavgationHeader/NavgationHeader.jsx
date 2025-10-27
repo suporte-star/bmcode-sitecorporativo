@@ -1,36 +1,49 @@
 'use client'
 import styles from "./NavgationHeader.module.css";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function NavigationHeader() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const navigationLinks = [
     { name: "Início", href: "/" },
-    { name: "Sobre", href: "#aboutus" },
-    { name: "Números", href: "#numbers" },
-    { name: "Clientes", href: "#customer" },
+    { name: "Sobre", targetId: "aboutus" },
+    { name: "Números", targetId: "numbers" },
+    { name: "Clientes", targetId: "customer" },
   ];
 
-  const handleAnchorClick = (e, href) => {
-    if (href.startsWith('#') && window.location.pathname !== '/') {
-      e.preventDefault();
-      window.location.href = `/${href}`;
-    }
+  const handleAnchorClick = (e, targetId) => {
+    e.preventDefault(); 
 
+
+    if (pathname === "/") {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } 
+
+    else {
+      sessionStorage.setItem("scrollTarget", targetId);
+      router.push("/");
+    }
   };
 
-  return (
+   return (
     <nav className={styles.contentNavigation}>
       <ul className={styles.listNavigation}>
         {navigationLinks.map((link) => (
           <li key={link.name} className={styles.item}>
-            {link.href.startsWith('#') ? (
-              <Link 
-                href={`/${link.href}`}
+            {link.targetId ? (
+              <a
+                href="/"
+                onClick={(e) => handleAnchorClick(e, link.targetId)}
                 className={styles.link}
-                onClick={(e) => handleAnchorClick(e, link.href)}
               >
                 {link.name}
-              </Link>
+              </a>
             ) : (
               <Link href={link.href} className={styles.link}>
                 {link.name}
@@ -40,5 +53,5 @@ export default function NavigationHeader() {
         ))}
       </ul>
     </nav>
-  );
+  )
 }

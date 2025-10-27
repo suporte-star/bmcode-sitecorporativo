@@ -1,11 +1,15 @@
-import React from 'react'
+'use client'
 import styles from './Footer.module.css'
 import { FaInstagram, FaLinkedin, FaCode, FaHeart } from "react-icons/fa";
 import { BsFillThreadsFill } from "react-icons/bs";
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
+  
 
   const socialLinks = [
     {
@@ -26,12 +30,28 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { href: '#initial', label: 'Inicio' },
+    { href: '/', label: 'Inicio' },
     { href: '/contact', label: 'Contato' },
-    { href: '#', label: 'Sobre' },
+    { targetId: 'aboutus', label: 'Sobre' },
     { href: '/work', label: 'Trabalhe Conosco' },
     { href: '/policies', label: 'Política de Privacidade' },
   ];
+
+  const handleQuickLinkClick = (e, link) => {
+    e.preventDefault();
+
+    if (link.targetId) {
+      if (pathname === '/') {
+        const el = document.getElementById(link.targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        sessionStorage.setItem('scrollTarget', link.targetId);
+        router.push('/');
+      }
+    } else if (link.href) {
+      window.location.href = link.href;
+    }
+  }
 
   return (
     <footer className={styles.footer}>
@@ -68,9 +88,12 @@ export default function Footer() {
           <ul className={styles.linksList}>
             {quickLinks.map((link, index) => (
               <li key={index}>
-                <Link href={link.href} className={styles.footerLink}>
+                <button
+                  onClick={(e) => handleQuickLinkClick(e, link)}
+                  className={styles.footerLink}
+                >
                   {link.label}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
