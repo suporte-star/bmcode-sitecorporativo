@@ -1,19 +1,25 @@
 import "./globals.css";
 import Header from "@/layout/header/header";
 import Footer from "@/layout/footer/Footer";
+import GlobalLoader from '@/components/utils/Loader/GlobalLoader'
 
 export const metadata = {
   title: "BmCode",
   description: "Empresa de Tecnologia",
+    icons: {
+    icon: "./favicon/BMCODE.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body className={''}>
-        <Header />
-        {children}
-        <Footer />
+        <GlobalLoader>
+          <Header />
+          {children}
+          <Footer />
+        </GlobalLoader>
       </body>
     </html>
   );

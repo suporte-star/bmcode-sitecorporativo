@@ -115,26 +115,37 @@ export default function FiltersSection({onFiltersChange}){
             </div>
             <div className={styles.filterActions}>
                 <Button
+                    className={`${styles.filterButtons} ${styles.clearFilters}`}
                     variant="outlined"
                     onClick={handleClearFilters}
                     sx={{
                         color: 'var(--primary-color)',
                         borderColor: 'var(--primary-color)',
+                        width:'160px',
+                        transition:'all .5s ease',
                         '&:hover': {
-                            borderColor: 'var(--primary-color)',
-                            backgroundColor: '#8191d81e'
+                            transform:'translateY(-3px)',
+                        },
+                        '@media (max-width: 390px)': { 
+                            width: '80%'
                         }
                     }}
                 >
                     Limpar Filtros
                 </Button>
-                <Button 
+                <Button
+                    className={`${styles.filterButtons} ${styles.applyFilters}`} 
                     variant="contained"
                     onClick={handleApplyFilters}
                     sx={{
                         backgroundColor: 'var(--primary-color)',
+                        width:'160px',
+                        transition:'all .5s ease',
                         '&:hover': {
-                            backgroundColor: '#1e2f70'
+                            transform:'translateY(-3px)',
+                        },
+                        '@media (max-width: 390px)': { 
+                            width: '80%'
                         }
                     }}
                 >
