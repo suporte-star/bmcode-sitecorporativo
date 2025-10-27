@@ -257,14 +257,17 @@
     grid-template-areas: 
       "cargo"
       "data"
+      "localizacao"
       "button";
     text-align: center;
     gap: 0.5rem;
   }
-  .td:nth-child(2),.td:nth-child(1){
+  .td:nth-child(2),.td:nth-child(1),.td:nth-child(5){
     justify-self: center;
   }
-  
+  .td:nth-child(5){
+    font-size: .9rem;
+  }
   .td:nth-child(6) {
     justify-self: center;
     margin-top: 0.5rem;
