@@ -94,10 +94,9 @@
   color: var(--secondary-color);
   width: 100%;
   max-width: 460px;
-  height: 40px;
   gap: 1rem;
   border-radius: 8px;
-  padding-left: 10px;
+  padding: 20px 0 20px 10px;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -134,7 +133,6 @@
 
   .descritionInform {
     max-width: 100%;
-    justify-content: center;
   }
 }
 
@@ -150,6 +148,9 @@
   .mapContainer {
     height: 300px;
   }
+  .infoMap{
+    align-items: center;
+  }
 
   .subtitleInform {
     font-size: 0.9rem;
@@ -157,9 +158,11 @@
 
   .descritionInform {
     font-size: 13px;
-    height: 70px;
+    padding: 17px 0 17px 8px;
     width: 390px;
     flex-wrap: wrap;
+
+    align-items: center;
     text-align: center;
   }
 }

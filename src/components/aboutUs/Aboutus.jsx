@@ -11,7 +11,7 @@ export default function Aboutus() {
 
       <section className={styles.boxContentAbout}>
         <AnimatedSection className={styles.animatedSection}>
-          <div className={styles.contentAbout}>
+          <div className={styles.contentAbout_1}>
             <div className={styles.contentDescrition}>
               <p>Fundada em 2021, a BMcode nasceu com o propósito de impulsionar resultados por meio da tecnologia, oferecendo soluções inteligentes que otimizam processos, aumentam a eficiência operacional e potencializam o desempenho dos projetos de nossos clientes.</p>
               <br />
@@ -40,7 +40,7 @@ export default function Aboutus() {
         </AnimatedSection>
 
         <AnimatedSection className={styles.animatedSection}>
-          <div className={styles.contentAbout}>
+          <div className={styles.contentAbout_2}>
             <div className={styles.CardContainer}>
               <div className={styles.badge}>
                 <div className={styles.Text}>
@@ -67,7 +67,7 @@ export default function Aboutus() {
         </AnimatedSection>
 
         <AnimatedSection className={styles.animatedSection}>
-          <div className={styles.contentAbout}>
+          <div className={styles.contentAbout_3}>
             <div className={styles.contentDescrition}>
               <p>Somos especialistas na execução de projetos personalizados e na sustentação completa do ERP Sankhya, oferecendo um suporte técnico e estratégico que garante estabilidade, eficiência e inovação contínua aos nossos parceiros.</p>
               <br />

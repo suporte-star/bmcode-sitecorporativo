@@ -7,7 +7,7 @@ export const metadata = {
   title: "BmCode",
   description: "Empresa de Tecnologia",
     icons: {
-    icon: "./favicon/BMCODE.png",
+    icon: "./favicon/favicon.ico",
   },
 };
 
