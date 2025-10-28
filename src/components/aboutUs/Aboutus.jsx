@@ -2,12 +2,13 @@
 import Image from 'next/image';
 import styles from './Aboutus.module.css';
 import AnimatedSection from '@/components/utils/Animations/AnimatedSection'
+import Title from '../utils/Title/Title';
 
 export default function Aboutus() {
   return (
     <section className={styles.ContentAbout} id='aboutus'>
       <p className={styles.titleParagraf}>Quem Somos</p>
-      <h1 className={styles.titleAbout}>EMPRESA DE TECNOLOGIA E DESENVOLVIMENTO</h1>
+      <Title title='EMPRESA DE TECNOLOGIA E DESENVOLVIMENTO' className={styles.titleAbout}></Title>
 
       <section className={styles.boxContentAbout}>
         <AnimatedSection className={styles.animatedSection}>
